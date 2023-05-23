@@ -32,33 +32,7 @@ sim::Side AdvancedGameState::their_side() const {
 	}
 }
 
-/*
-#include <algorithm>
-#include <iostream>
 
-int main(){
-    int x[] {
-        3, 6, 1, 7, 19
-    };
-    int m = 5;
-    auto cmp = [
-		&// das hier ist m
-	](int a, int b) {
-        int da = a - m;
-        int db = b - m;
-        return std::abs(da) < std::abs(db);
-    };
-    std::sort(
-        std::begin(x)
-        , std::end(x)
-        , cmp
-    );
-    for(auto v : x) {
-        std::cout << v << '\n';
-    }
-    return 0;
-} 
-*/
 
 std::vector<sim::RobotState> AdvancedGameState::sort_robots_by_distance2(
 		  sim::Vector const& position
@@ -86,18 +60,14 @@ std::vector<sim::RobotState> AdvancedGameState::sort_robots_by_distance(
 		  sim::Vector const& position
 		, std::vector<sim::RobotState> robots
 	) const{
-	//sim::Vector pos = position;
-	//std::map<int, std::vector<sim::RobotState>> m;
-	//sim::RobotState temp;
+	
 	double len[robots.size()];
 	for(int i = 0; i < robots.size(); i++){
 		len[i] = (robots[i].position - position).length();
-		//m.insert( std::pair<int, std::vector<sim::RobotState>>(robots[i].position - position).length(), robots[i]);
+		
 		std::cout << len[i] << " das sind die Unterschiedlichen laengen von den Robotern " << robots[i].name  << std::endl;
 	}
-	//bis hier hin klappt es 
-	
-	//std::vector<sim::RobotState, int> k;
+	;
 	double test;
 	sim::RobotState temp;
 	for(int j = 0; j < robots.size()-1; j++){
@@ -119,18 +89,7 @@ std::vector<sim::RobotState> AdvancedGameState::sort_robots_by_distance(
 		//m.insert( std::pair<int, std::vector<sim::RobotState>>(robots[i].position - position).length(), robots[i]);
 		std::cout << len[i] << " das sind die Unterschiedlichen laengen von den Robotern aber sortiert" << std::endl;
 	}
-	/*
-	for(int i = 0; i < robots.size()-1; i++){
-		for(int j = 0; j < robots.size()-1;j++){
-			if(len[j] > len[i+1]){
-				temp = robots[i+1];
-				robots[i+1] = robots[j];
-				robots[j] = temp;
-			};
-		}
-	}
-	*/
-	//std::sort(m.begin(), m.end(), m[1]);
+	
 	return robots;
 };
 
