@@ -3,23 +3,6 @@
 
 void Striker::control(AdvancedPlayer& player, AdvancedGameState const& state) {
 	double x = -2.75;
-	//std::vector<sim::RobotState> sortedRobots;
-	//sortedRobots = state.sort_robots_by_distance(state.robot().position, state.robots);
-	//std::cout << sortedRobots[0].name << std::endl << sortedRobots[1].name << std::endl;
-	
-	/*sim::RobotState r1 = state.closest_to( state.robot().position
-		, state.robots
-	);
-	
-	std::cout << r1.name << std::endl;*/
-	
-	//std::cout << state.robots[0].name <<  std::endl << state.robots[1].name << std::endl << state.robots[2].name << std::endl << state.robots[3].name << std::endl ;
-	//"das ist der Name des nächsten Roboters" << std::endl; 
-	//std::vector<sim::RobotState> k = state.our_robots();
-	//std::cout << k[1].position.x << " " <<  k[0].position.x << " das sind die  X positionen von Teams des Angreifers" << std::endl ;
-	
-
-	//Gute Werte fuer den vorderen Spieler player.advanced_targeting(state, v1, 0.3, 0.7, -0.7);
 	
 	if(state.our_side() == sim::Side::yellow){
 		x *= -1;
@@ -51,15 +34,7 @@ void Striker::control(AdvancedPlayer& player, AdvancedGameState const& state) {
 	
 	if(state.is_our_throw_in()){
 		if(throw_in_machine.state == AdvancedPlayer::ThrowInMachine::State::INVALID) {
-			/*
-			double abs_x = sim::Pitch::length() / 2.0 + 0.33;
-			double abs_y = sim::Pitch::width()  / 2.0 + 0.33;
-			double x = state.ball.position.x < 0.0 ? -abs_x : abs_x;
-			double y = state.ball.position.y < 0.0 ? -abs_y : abs_y;
-			sim::Vector target{x, y};
-			sim::Vector temp{state.robot().position.x, y};
-			//sim::Vector temp{x, state.robot().position.y};
-			throw_in_machine = AdvancedPlayer::ThrowInMachine{temp, target, temp};*/
+			
 			
 		double x1 = state.ball.position.x;
 		double y1 = state.ball.position.y;
@@ -96,23 +71,6 @@ void Striker::control(AdvancedPlayer& player, AdvancedGameState const& state) {
 
 void Striker2::control(AdvancedPlayer& player, AdvancedGameState const& state) {
 	double x = -2.75;
-	//std::vector<sim::RobotState> sortedRobots;
-	//sortedRobots = state.sort_robots_by_distance(state.robot().position, state.robots);
-	//std::cout << sortedRobots[0].name << std::endl << sortedRobots[1].name << std::endl;
-	
-	/*sim::RobotState r1 = state.closest_to( state.robot().position
-		, state.robots
-	);
-	
-	std::cout << r1.name << std::endl;*/
-	
-	//std::cout << state.robots[0].name <<  std::endl << state.robots[1].name << std::endl << state.robots[2].name << std::endl << state.robots[3].name << std::endl ;
-	//"das ist der Name des nächsten Roboters" << std::endl; 
-	//std::vector<sim::RobotState> k = state.our_robots();
-	//std::cout << k[1].position.x << " " <<  k[0].position.x << " das sind die  X positionen von Teams des Angreifers" << std::endl ;
-	
-
-	//Gute Werte fuer den vorderen Spieler player.advanced_targeting(state, v1, 0.3, 0.7, -0.7);
 	
 	if(state.our_side() == sim::Side::yellow){
 		x *= -1;
@@ -143,15 +101,6 @@ void Striker2::control(AdvancedPlayer& player, AdvancedGameState const& state) {
 	
 	if(state.is_our_throw_in()){
 		if(throw_in_machine.state == AdvancedPlayer::ThrowInMachine::State::INVALID) {
-			/*
-			double abs_x = sim::Pitch::length() / 2.0 + 0.33;
-			double abs_y = sim::Pitch::width()  / 2.0 + 0.33;
-			double x = state.ball.position.x < 0.0 ? -abs_x : abs_x;
-			double y = state.ball.position.y < 0.0 ? -abs_y : abs_y;
-			sim::Vector target{x, y};
-			sim::Vector temp{state.robot().position.x, y};
-			//sim::Vector temp{x, state.robot().position.y};
-			throw_in_machine = AdvancedPlayer::ThrowInMachine{temp, target, temp};*/
 			
 		double x1 = state.ball.position.x;
 		double y1 = state.ball.position.y;
@@ -186,14 +135,6 @@ void Striker2::control(AdvancedPlayer& player, AdvancedGameState const& state) {
 	}
 }
 	
-	/*
-	while( state.announcment.corner_kick_yellow == sim::RefereeAnnouncement::corner_kick_yellow
-		&& state.our_side() == sim::Side::yellow
-		|| state.announcment.corner_kick_blue   == sim::RefereeAnnouncement::corner_kick_blue
-	){
-		sim::Vector B = state.ball.position;
-		
-	}
-	*/
+
 	
 	
